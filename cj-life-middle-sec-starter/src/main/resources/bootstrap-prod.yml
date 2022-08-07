@@ -1,0 +1,31 @@
+spring:
+#  config:
+#    import:
+#      - optional:
+  cloud:
+    config:
+      #      写死指向配置中心地址
+      #      uri: http://localhost:8861
+      #通过注册中心自动发现配置中心地址，注意它会获取到docker内的ip这样就会加载错误
+      discovery: #config配置中心高可用
+        # 开启 Config 服务发现与注册
+        enabled: true
+        # 指定 server
+        #注册到Eureka的配置中心微服务名称
+        service-id: cj-life-config-server
+      profile: prod
+      label: master
+    #      username:
+    #      password:
+eureka:
+  client:
+    register-with-eureka: true  # 是否向注册中心注册自己
+    fetchRegistry: true   # 是否从注册中心抓取已有的注册信息，默认true，集群必须设置为true
+    service-url:
+      # 集群中各个服务注册中心的地址，实际上先一个节点即可，因为服务器集群会复制提供者信息。
+      defaultZone: ${cj.life.EUREKA_SERVER_URL:http://eureka8761:8761/eureka}
+  instance:
+    instance-id: ${spring.application.name}/${server.port}	 # 服务实例Id
+    prefer-ip-address: true
+    appname: ${spring.application.name}
+    status-page-url: http://localhost:${server.port}${server.servlet.context-path}doc.html
