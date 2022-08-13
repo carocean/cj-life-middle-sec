@@ -1,0 +1,12 @@
+spring:
+  data:
+    elasticsearch:
+      repositories:
+        enabled: ${cj.life.spring.data.elasticsearch.repositories.enabled:true}
+  elasticsearch:
+    uris: ${cj.life.spring.elasticsearch.uris:https://localhost:9200}
+    username: ${cj.life.spring.elasticsearch.username:elastic}
+    password: ${cj.life.spring.elasticsearch.password:elastic123}
+    connection-timeout: ${cj.life.spring.elasticsearch.connection-timeout:5000}
+#    path-prefix: ${cj.life.spring.elasticsearch.path-prefix:}
+    socket-timeout: ${cj.life.spring.elasticsearch.socket-timeout:30}

@@ -53,6 +53,7 @@
             <artifactId>cj-life-middle-sec-remote</artifactId>
             <version>${cj-life-middle-sec-remote.version}</version>
         </dependency>
+
     </dependencies>
 
     <build>
@@ -117,6 +118,13 @@
                     <env>
                         <cj.life.spring.profiles.active>prod</cj.life.spring.profiles.active>
                         <cj.life.EUREKA_SERVER_URL>http://localhost:8761/eureka</cj.life.EUREKA_SERVER_URL>
+                        <cj.life.spring.data.elasticsearch.repositories.enabled>true</cj.life.spring.data.elasticsearch.repositories.enabled>
+                        <cj.life.spring.elasticsearch.uris>https://localhost:9200</cj.life.spring.elasticsearch.uris>
+                        <cj.life.spring.elasticsearch.username>elastic</cj.life.spring.elasticsearch.username>
+                        <cj.life.spring.elasticsearch.password>elastic123</cj.life.spring.elasticsearch.password>
+                        <cj.life.spring.elasticsearch.connection-timeout>5000</cj.life.spring.elasticsearch.connection-timeout>
+                        <cj.life.spring.elasticsearch.socket-timeout>30</cj.life.spring.elasticsearch.socket-timeout>
+                        <cj.life.spring.elasticsearch.path-prefix></cj.life.spring.elasticsearch.path-prefix>
                     </env>
                     <!--指定远程 docker api地址 远程仓库-->
                     <!--                    <dockerHost>http://localhost:2375</dockerHost>-->

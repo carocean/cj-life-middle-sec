@@ -1,7 +1,7 @@
 spring:
-#  config:
-#    import:
-#      - optional:
+  config:
+    import:
+      - optional:es/es-prod.yml
   cloud:
     config:
       #      写死指向配置中心地址
