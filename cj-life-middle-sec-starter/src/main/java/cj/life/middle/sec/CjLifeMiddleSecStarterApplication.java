@@ -7,7 +7,6 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication(scanBasePackages = {"cj.life.ability", "cj.life.middle.sec"})
 @EnableEurekaClient
-@EnableFeignClients(basePackages = "cj.life.middle.sec.remote")
 public class CjLifeMiddleSecStarterApplication {
 
     public static void main(String[] args) {
